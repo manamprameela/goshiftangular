@@ -1,0 +1,52 @@
+<section class="vh-100" style="background-color: #afafaf;">
+    <br>
+    <h2 class="h3 block-title text-center">Update Employee<br></h2>
+    <div class="container">
+      <div class="col align-self-center">
+        <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+          <div class="form-group mb-4">
+            <label for="ename" class="col-sm-2 col-form-label">Employee Name</label>
+            <input type="text" class="form-control" [(ngModel)]="empData.ename" name="ename" #ename="ngModel"
+              pattern="^[a-zA-Z\s]{1,15}$" required />
+          </div>
+          <span *ngIf="ename.invalid && ename.touched" class="error form-control-feedback">Enter Employee Name</span>
+
+          <div class="form-group mb-4">
+            <label for="email" class="col-sm-2 col-form-label">Email</label>
+            <input type="email" class="form-control" [(ngModel)]="empData.email" name="email" #email="ngModel"
+              required />
+          </div>
+          <span *ngIf="email.invalid && email.touched" class="error form-control-feedback">Enter Employee Email</span>
+
+          <div class="form-group mb-4">
+            <label for="password" class="col-sm-2 col-form-label">Password</label>
+            <input type="password" class="form-control" [(ngModel)]="empData.password" name="password" #password="ngModel"
+             required />
+          </div>
+          <span *ngIf="password.invalid && password.touched" class="error form-control-feedback">Enter Employee Password</span>
+
+          <div class="form-group mb-4">
+            <label>Office Location</label>
+            <select id="Location" placeholder="" class="form-control" [(ngModel)]="empData.location" name="location"
+              #location="ngModel">
+              <option>Pune</option>
+              <option>Mumbai</option>
+              <option>Chennai</option>
+              <option>Bangalore</option>
+              <option>Hyderabad</option>
+            </select>
+            <span *ngIf="location.invalid && location.touched" class="error form-control-feedback">Location is required</span>
+          </div>
+
+          <div class="form-group">
+            <button (click)="updateEmp()" [disabled]="!myForm.form.valid" type="button" class="btn btn-primary">
+              Update Employee
+            </button>
+          </div>
+          <div class="alert alert-danger" role="alert" *ngIf="submitted">
+            Please fill all the fields
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>

@@ -1,0 +1,38 @@
+html,
+body,
+header,
+#intro {
+    height: 100%;
+}
+
+.bg
+{
+  background-image:  url('https://mdbcdn.b-cdn.net/img/new/slides/003.webp');
+  
+  height: 1000px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: cover;
+}
+
+#intro {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.top-nav-collapse {
+    background-color: #24355C;
+  }
+  @media (max-width: 768px) {
+    .navbar:not(.top-nav-collapse) {
+      background-color: #24355C;
+    }
+  }
+  @media (min-width: 800px) and (max-width: 850px) {
+    .navbar:not(.top-nav-collapse) {
+      background-color: #24355C;
+    }
+  }

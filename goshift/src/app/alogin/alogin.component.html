@@ -1,0 +1,55 @@
+<section class="vh-100" >
+    <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-9 col-lg-6 col-xl-5">
+                <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/draw2.png"
+                    class="img-fluid" alt="Sample image">
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                <form #loginForm='ngForm' (ngSubmit)="addAdmin()">
+                    <h2 class="text-center text-light">Admin Log-In</h2>
+                    <br>
+                    <div class="form-outline mb-4">
+                        <label class="form-label text-light" for="form3Example3">Email address</label>
+                        <input type="email" class="form-control" placeholder="Enter your Email" required="required"
+                            ngModel name="email" [(ngModel)]="loginsForm.email" #email="ngModel">
+                        <span *ngIf="email.invalid && email.touched"
+                            class="error form-control-feedback text-danger text-light">
+                            E-mail is required
+                        </span>
+                    </div>
+
+
+                    <div class="form-outline mb-3">
+                        <label class="form-label text-light" for="form3Example4">Password</label>
+                        <input type="password" class="form-control" placeholder="Enter your Password" minlength="8"
+                            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}$" ngModel
+                            name="password" [(ngModel)]="loginsForm.password" #password="ngModel">
+                        <div class="error form-control-feedback text-danger">
+                            <span *ngIf="password.invalid && password.touched">Password is required</span>
+                            <span *ngIf="password.errors">Password must be 8 characters long</span>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+
+                        <div class="form-check mb-0">
+                            <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+                            <label class="form-check-label text-light" for="form2Example3">
+                                Remember me
+                            </label>
+                        </div>
+                        <a href="#!" class=" text-light text-light">Forgot password?</a>
+                    </div>
+
+                    <div class="text-center text-lg-start mt-4 pt-2">
+                        <button (click)="onLogin(loginForm)" [disabled]="!loginForm.valid" type="submit"
+                            class="btn btn-primary btn-block">Login</button>
+                        <p class="small fw-bold mt-2 pt-1 mb-0 text-light">Don't have an account? <a href="register"
+                                class="text-center text-light">Signup</a></p>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+      <a class="navbar-brand" href="#">GO SHIFT</a>
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+          data-mdb-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
+          data-mdb-target="#navbarRightAlignExample" aria-controls="navbarRightAlignExample" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <!-- <li class="nav-item">
+                  <a class="nav-link" style="margin-left: 1em;" label="AddEmp" routerLink="/addemp"
+                      (click)="AddEmp=true; ViewEmp=false; EditEmp=false;">Add Employee</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" style="margin-left: 1em;" label="ViewEmp" routerLink="/viewemp"
+                      >View Employee</a>
+              </li> -->
+              <!-- <li class="nav-item">
+                      <a class="nav-link" style="margin-left: 1em;" label="EditEmp"
+                      (click)="AddEmp=false; ViewEmp=false; EditEmp=true;">Edit Employee</a>
+                  </li> -->
+          </ul>
+      </div>
+      <div id="navbarRightAlignExample">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                  <a class="nav-link text-dark bg-light" (click)="ngOnSubmit()" style="margin-left: 1em;">Logout</a>
+              </li>
+          </ul>
+      </div>
+  </div>
+</nav>
+<br>
+<table class="table table-hover table-success text-center table-bordered border-secondary">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Sid</th>
+      <th scope="col">Employee Name</th>
+      <th scope="col">Department</th>
+      <th scope="col">Shift</th>
+      <th scope="col">Shift Date</th>
+      <th scope="col">Shift Time</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let sft of shifts">
+      <th scope="row"></th>
+      <td>{{ sft.sid }}</td>
+      <td>{{ sft.ename }}</td>
+      <td>{{ sft.dname }}</td>
+      <td>{{ sft.sname }}</td>
+      <td>{{ sft.sdate }}</td>
+      <td>{{ sft.stime }}</td>
+      <button type="button" class="bg-light text-primary" routerLink="/editshift/{{ sft.sid }}"
+        style="margin: 5px 5px 5px 5px; padding: 3px;">Update</button>
+      <button type="button" class="bg-light text-danger" style="margin: 5px 5px 5px 5px; padding: 3px;"
+        (click)="onDelete(sft)">Delete</button>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,24 @@
+.jumbotron {
+    background: #358CCE;
+    color: #FFF;
+    border-radius: 0px;
+    }
+    .vh-100
+{
+    background-image:  url('https://images.pexels.com/photos/207455/pexels-photo-207455.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+  background-color: #cccccc;
+  height: 1000px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+    
+}
+    .jumbotron-sm { padding-top: 24px;
+    padding-bottom: 24px; }
+    .jumbotron small {
+    color: #FFF;
+    }
+    .h1 small {
+    font-size: 24px;
+    }

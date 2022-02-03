@@ -1,0 +1,128 @@
+<section style="background-color: #e6e4e4;">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!------ Include the above in your HEAD tag ---------->
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+
+	<div class="container">
+		<br>
+		<br>
+		<div class="row justify-content-center">
+			<div class="col-md-6">
+				<div class="card">
+					<header class="card-header">
+						<a href="/elog" class="float-right btn btn-outline-primary mt-1">Log in</a>
+						<h4 class="card-title mt-2">Sign up</h4>
+					</header>
+					<article class="card-body">
+						<form [formGroup]="registerForm" (ngSubmit)="ngSubmit()">
+							<div class="form-row">
+								<div class="col form-group">
+									<label>Full name </label>
+									<input type="text" class="form-control" placeholder="Enter your name"
+										formControlName="ename">
+									<span class="text-danger"
+										*ngIf="registerForm.controls['ename'].invalid && registerForm.controls['ename'].touched">*Name
+										is required</span>
+								</div>
+								<div class="col form-group">
+									<label>Date of Joining</label>
+									<input type="date" class="form-control" placeholder="" formControlName="doj">
+									<span class="text-danger"
+										*ngIf="registerForm.controls['doj'].invalid && registerForm.controls['doj'].touched">*Doj
+										is required</span>
+								</div>
+							</div>
+							<div class="form-group">
+								<label>Email address</label>
+								<input type="email" class="form-control" placeholder="Enter your email"
+									formControlName="email">
+								<span class="text-danger"
+									*ngIf="registerForm.controls['email'].invalid && registerForm.controls['email'].touched">*Email
+									is required</span>
+								<small class="form-text text-muted">Share the correct Email.</small>
+							</div>
+							<div class="form-group">
+								<label class="form-check form-check-inline">
+									<input class="form-check-input" type="radio" name="gender" value="Male"
+										formControlName="gender">
+									<span class="form-check-label"> Male </span>
+								</label>
+								<label class="form-check form-check-inline">
+									<input class="form-check-input" type="radio" name="gender" value="Female"
+										formControlName="gender">
+									<span class="form-check-label"> Female</span>
+								</label>
+								<label class="form-check form-check-inline">
+									<input class="form-check-input" type="radio" name="gender" value="Others"
+										formControlName="gender">
+									<span class="form-check-label"> Others</span>
+								</label>
+							</div>
+							<div class="form-row">
+								<div class="form-group col-md-6">
+									<label>Office Location</label>
+									<select id="inputCity" placeholder="Select the Office Location" class="form-control"
+										formControlName="location">
+										<option>Pune</option>
+										<option>Mumbai</option>
+										<option>Bangalore</option>
+										<option>Hyderabad</option>
+										<option>Chennai</option>
+										<!-- <option Selected="">Select the office location</option> -->
+									</select>
+									<span class="text-danger"
+										*ngIf="registerForm.controls['location'].invalid && registerForm.controls['location'].touched">*Location
+										is required</span>
+								</div>
+							</div>
+							<div class="form-group">
+								<label>Create password</label>
+								<input class="form-control" type="password" formControlName="password">
+								<span class="text-danger"
+									*ngIf="registerForm.controls['password'].invalid && registerForm.controls['password'].touched">*Password
+									is required</span>
+								<!-- <span class="text-danger" *ngIf = "registerForm.controls['password'].hasError('minlength')">
+			Password should contain 8 characters</span> -->
+							</div>
+							<div class="form-group">
+								<label>Confirm password</label>
+								<input class="form-control" type="password" formControlName="repassword">
+								<span class="text-danger"
+									*ngIf="registerForm.controls['repassword'].invalid && registerForm.controls['repassword'].touched">*Password
+									doesn't match</span>
+							</div>
+							<div class="form-group">
+								<button type="submit" (click)="addEmployee()" [disabled]="!registerForm.valid"
+									class="btn btn-primary btn-block"> Register </button>
+								<button type="reset" class="btn btn-secondary btn-block"> Reset </button>
+							</div> <!-- form-group// -->
+							<small class="text-muted">By clicking the 'Register' button, you confirm that you accept our
+								<br> Terms of use and Privacy Policy.</small>
+						</form>
+					</article> <!-- card-body end .// -->
+					<div class="border-top card-body text-center">Have an account? <a href="/elog">Log In</a></div>
+				</div> <!-- card.// -->
+			</div> <!-- col.//-->
+
+		</div> <!-- row.//-->
+
+
+	</div>
+	<!--container end.//-->
+
+	<br><br>
+	<article class="bg-secondary mb-3">
+		<div class="card-body text-center">
+			<h3 class="text-white mt-3">GOSHIFT</h3>
+			<p class="h5 text-white">Shift work is common for almost any business that operates for 8 hours a day or
+				longer. The reason for this is that employers don't have the financial resources or they're unwilling to
+				pay employees overtime. As a result, they'll split the workload into shifts that keep their workers
+				below 40 hours a week. This reduces overhead, as well as keeping employees alert and sharp.</p> <br>
+		</div>
+		<br><br>
+	</article>
+</section>

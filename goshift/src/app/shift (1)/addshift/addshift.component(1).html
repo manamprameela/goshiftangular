@@ -1,0 +1,145 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">GO SHIFT</a>
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+            data-mdb-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
+            data-mdb-target="#navbarRightAlignExample" aria-controls="navbarRightAlignExample" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <!-- <li class="nav-item">
+                    <a class="nav-link" style="margin-left: 1em;" label="AddEmp" routerLink="/addemp"
+                        (click)="AddEmp=true; ViewEmp=false; EditEmp=false;">Add Employee</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="margin-left: 1em;" label="ViewEmp" routerLink="/viewemp"
+                        >View Employee</a>
+                </li> -->
+                <!-- <li class="nav-item">
+                        <a class="nav-link" style="margin-left: 1em;" label="EditEmp"
+                        (click)="AddEmp=false; ViewEmp=false; EditEmp=true;">Edit Employee</a>
+                    </li> -->
+            </ul>
+        </div>
+        <div id="navbarRightAlignExample">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link text-dark bg-light" (click)="ngOnSubmit()" style="margin-left: 1em;">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+  </nav>
+
+<section style="background-color: #dddbdb;">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+
+    <div class="container">
+        <br>
+        <br>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <header class="card-header">
+                        <h4 class="card-title mt-2 text-center">Add Shift for an Employee</h4>
+                    </header>
+                    <article class="card-body">
+                        <form [formGroup]="addForm" (ngSubmit)="ngSubmit()">
+                            <div class="form-row">
+                                <div class="col form-group">
+                                    <label>Employee name </label>
+                                    <input type="text" class="form-control" placeholder="Enter Employee name"
+                                        formControlName="ename">
+                                    <span class="text-danger"
+                                        *ngIf="addForm.controls['ename'].invalid && addForm.controls['ename'].touched">*Name
+                                        is required</span>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Department</label>
+                                    <select id="dept" placeholder="Select the Office Location" class="form-control"
+                                        formControlName="dname">
+                                        <option>Web</option>
+                                        <option>Application</option>
+                                        <option>HR</option>
+                                        <option>Sales</option>
+                                        <!-- <option Selected="">Select the office location</option> -->
+                                    </select>
+                                    <span class="text-danger"
+                                        *ngIf="addForm.controls['dname'].invalid && addForm.controls['dname'].touched">*Department
+                                        is required</span>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label>Shift</label>
+                                    <select id="dept" placeholder="" class="form-control" formControlName="sname">
+                                        <option>Morning Shift</option>
+                                        <option>Evening Shift</option>
+                                        <option>Night Shift</option>
+                                        <!-- <option Selected="">Select the office location</option> -->
+                                    </select>
+                                    <span class="text-danger"
+                                        *ngIf="addForm.controls['sname'].invalid && addForm.controls['sname'].touched">*Shift
+                                        is required</span>
+                                </div>
+                                <div class="col form-group col-md-6">
+                                    <label>Shift Date</label>
+                                    <input type="date" class="form-control" placeholder="" formControlName="sdate">
+                                    <span class="text-danger"
+                                        *ngIf="addForm.controls['sdate'].invalid && addForm.controls['sdate'].touched">*Date
+                                        is required</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Shift Time</label>
+                                <br>
+                                <label class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="stime" value="9AM-5PM"
+                                        formControlName="stime">
+                                    <span class="form-check-label"> 9AM-5PM </span>
+                                </label>
+                                <label class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="stime" value="1PM-9PM"
+                                        formControlName="stime">
+                                    <span class="form-check-label"> 1PM-9PM </span>
+                                </label>
+                                <label class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="stime" value="10PM-6AM"
+                                        formControlName="stime">
+                                    <span class="form-check-label"> 10PM-6AM </span>
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" (click)="addShift()" [disabled]="!addForm.valid"
+                                    class="btn btn-primary btn-block"> Add Shift </button>
+                                <button type="reset" class="btn btn-secondary btn-block"> Reset </button>
+                            </div> <!-- form-group// -->
+                            <!-- <small class="text-muted">By clicking the 'Register' button, you confirm that you accept our <br> Terms of use and Privacy Policy.</small>                                           -->
+                        </form>
+                    </article> <!-- card-body end .// -->
+                    <!-- <div class="border-top card-body text-center">Have an account? <a href="/login">Log In</a></div> -->
+                </div> <!-- card.// -->
+            </div> <!-- col.//-->
+
+        </div> <!-- row.//-->
+
+
+    </div>
+    <!--container end.//-->
+
+    <br><br>
+    <article class="bg-secondary mb-3">
+        <div class="card-body text-center">
+            <h3 class="text-white mt-3">GOSHIFT</h3>
+        </div>
+        <br><br>
+    </article>
+</section>

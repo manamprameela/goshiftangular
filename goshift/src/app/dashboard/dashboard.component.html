@@ -1,0 +1,62 @@
+<section class="vh-100" >
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">GO SHIFT</a>
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02" data-mdb-target="#navbarRightAlignExample"
+        aria-controls="navbarRightAlignExample" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <!-- <li class="nav-item">
+                <a class="nav-link" style="margin-left: 1em;" routerLink="/register"
+                routerLinkActive="active">Add Employee</a>
+              </li> -->
+        </ul>
+      </div>
+      <div id="navbarRightAlignExample">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link text-dark bg-light" (click)="ngOnSubmit()" style="margin-left: 1em;">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <br>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <div style="margin-bottom: -15px;">
+    <section class="container pt-3 mb-3">
+      <h2 class="h3 block-title text-center text-light">Employee Shift Management Portal<br><br></h2>
+      <div class="row pt-5 mt-30 justify-content-around">
+        <div class="col-lg-4 col-sm-6 mb-30 pb-5">
+          <a class="card" routerLink="/employee">
+            <div class="box-shadow bg-white rounded-circle mx-auto text-center"
+              style="width: 90px; height: 90px; margin-top: -45px;"><i class="fa fa-user fa-3x head-icon"></i>
+            </div>
+            <div class="card-body text-center">
+              <h3 class="card-title pt-1">Employee</h3>
+              <p class="card-text text-dark text-m">To Add, View, Edit, Delete Employee Details Click "Go"</p>
+              <button type="button" class="text-primary">Go</button>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-4 col-sm-6 mb-30 pb-5">
+          <a class="card" routerLink="/shift">
+            <div class="box-shadow bg-white rounded-circle mx-auto text-center"
+              style="width: 90px; height: 90px; margin-top: -45px;"><i
+                class="fa fa-user fa-3x fa-history head-icon"></i>
+            </div>
+            <div class="card-body text-center">
+              <h3 class="card-title pt-1">Shift</h3>
+              <p class="card-text text-dark text-m">To Add, View, Edit, Delete Shift Details &nbsp;&nbsp;&nbsp; Click
+                "Shift"</p>
+              <button type="button" routerLink="/shift" class="text-primary">Shift</button>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
